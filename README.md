@@ -2,7 +2,7 @@
 
 This is an updated version of a MS08-067 Python exploit script to make it compatible with Python 3. 
 
-It's based on the code of Andy Acer. 
+It is based on Andy Acer's code.
 Cloned and edited from this repository:  
 https://github.com/andyacer/ms08_067
 
@@ -45,6 +45,3 @@ python3 ms08_067_python3.py <target ip> <os #> <Port #>
 * ms08_067_2018.py 192.168.1.1 5 445 -- for Windows XP SP3 French (NX)
 * ms08_067_2018.py 192.168.1.1 6 445 -- for Windows XP SP3 English (NX)
 * ms08_067_2018.py 192.168.1.1 7 445 -- for Windows XP SP3 English (AlwaysOn NX)
-
-Also: nmap has a good OS discovery script that pairs well with this exploit:  
-nmap -p 139,445 --script-args=unsafe=1 --script /usr/share/nmap/scripts/smb-os-discovery 192.168.1.1Updated MS08-067 python exploit script for Python 3
