@@ -6,10 +6,6 @@ It is based on Andy Acer's code.
 Cloned and edited from this repository:  
 https://github.com/andyacer/ms08_067
 
-## Installation on Kali
-
-`git clone https://github.com/Nerkho/MS08-067`
-
 ## Dependencies
 
 You will need to install Impacket and Pycrypto
@@ -18,7 +14,6 @@ You will need to install Impacket and Pycrypto
 pip install impacket
 pip install pycrypto
 ```
-
 
 ## Generating Shellcode
 
